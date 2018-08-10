@@ -19,7 +19,7 @@ provisioner:
   #ansible_verbose: true
   #ansible_diff: true
   #ansible_verbosity: 2
-  idempotency_test: true
+  #idempotency_test: true
   #ansible_extra_flags: <%= ENV['ANSIBLE_EXTRA_FLAGS'] %>
   #ansible_version:
   #custom_pre_install_command:	nil	Custom shell command to be used at beginning of install stage. Can be multiline.
