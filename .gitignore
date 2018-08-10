@@ -55,3 +55,4 @@ ansible/inventories/mgmt-ocsit
 .kitchen
 .kitchen/
 .kitchen.local.yml
+Gemfile.lock
