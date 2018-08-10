@@ -1,0 +1,5 @@
+---
+- name: Initialize ckan db
+  command: ckan db init
+  tags:
+    - skip_ansible_lint

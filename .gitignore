@@ -53,3 +53,5 @@ ansible/inventories/mgmt-ocsit
 
 # Kitchen
 .kitchen
+.kitchen/
+.kitchen.local.yml

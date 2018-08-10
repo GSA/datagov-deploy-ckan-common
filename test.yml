@@ -1,0 +1,25 @@
+---
+- name: Install CKAN Stack
+  hosts: all
+  become: yes
+  become_method: sudo
+  remote_user: ubuntu
+  #vars:
+  #    app_type: catalog
+
+  ## tags used:
+  ## built-in: always
+  ## frontend, harvester, db, db-install, db-setup, db-init, solr, pycsw
+  ## redis, fgdc2iso, cron
+  ## sample usage: ansible-playbook ansibe/catalog.yml --tags "harvester" --skip-tags "solr,apache"
+
+  roles:
+    - roles/common
+    - roles/catalog
+    - roles/inventory        
+    - roles/apache
+    - roles/postgresql
+  #  - roles/solr
+  #  - roles/saml2
+  #  - roles/security-fix
+    - roles/fix-ckan-tracking

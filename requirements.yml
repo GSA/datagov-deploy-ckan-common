@@ -1,0 +1,5 @@
+# Requirements YAML: Install Ansible Roles
+# ----------------------------------------
+# When making the Conductor image `ansible-galaxy -install -r requirements.yml` is executed
+# using this file. Floowl the instructions at http://docs.ansible.com/ansible/galaxy.html
+# to include any roles you want to install prior to running main.yml.
