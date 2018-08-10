@@ -17,7 +17,7 @@ jobs:
           command: bundle install
       - run:
           name: Run test-kitchen
-          command: bundle exec kitchen test ubuntu-14-docker
+          command: bundle exec kitchen test dev-ubuntu-14-docker
   test-ubuntu-1604:
     working_directory: ~/ansible-fluentd
     machine:
@@ -35,7 +35,7 @@ jobs:
           command: bundle install
       - run:
           name: Run test-kitchen
-          command: bundle exec kitchen test ubuntu-16-docker
+          command: bundle exec kitchen test dev-ubuntu-16-docker
 
 workflows:
   version: 2
