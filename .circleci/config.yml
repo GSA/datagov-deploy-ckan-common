@@ -1,7 +1,7 @@
 version: 2
 jobs:
   test-ubuntu-1404:
-    working_directory: ~/ansible-fluentd
+    working_directory: ~/datagov-deploy-ckan-common
     machine:
       ruby:
         version: 2.4
@@ -17,7 +17,7 @@ jobs:
           command: bundle install
       - run:
           name: Run test-kitchen
-          command: bundle exec kitchen test dev-ubuntu-14-docker
+          command: bundle exec kitchen test ubuntu-14
   test-ubuntu-1604:
     working_directory: ~/ansible-fluentd
     machine:
@@ -35,7 +35,7 @@ jobs:
           command: bundle install
       - run:
           name: Run test-kitchen
-          command: bundle exec kitchen test dev-ubuntu-16-docker
+          command: bundle exec kitchen test ubuntu-16
 
 workflows:
   version: 2
