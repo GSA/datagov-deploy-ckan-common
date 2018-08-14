@@ -1,6 +1,5 @@
 ---
 driver:
-  name: docker
   privileged: true
   use_sudo: false
 
@@ -34,16 +33,27 @@ provisioner:
   #command: |
 
 platforms:
- # Ubuntu Trusty with Upstart
-  - name: ubuntu-14
-    driver_config:
-      image: rndmh3ro/docker-ubuntu1404-ansible:latest
-      platform: ubuntu
 
-  - name: ubuntu-16
-    driver_config:
-     image: rndmh3ro/docker-ubuntu1604-ansible:latest
-     platform: ubuntu
+  - name: ubuntu-14-vagrant
+    driver:
+      name: vagrant
+      box: ubuntu/trusty64
+      box_check_update: true
+
+  - name: ubuntu-16-vagrant
+    driver:
+      name: vagrant
+      #pre_create_command: cp .vagrant_plugins.json {{vagrant_root}}/ && vagrant plugin bundle
+      use_vagrant_hostmanager_plugin: true
+      box: ubuntu/xenial64
+      box_check_update: true
+      provision: hostmanager
+      vm_hostname: catalog-gsa.local
+      #gui: false
+      customize:
+        memory: 4096
+      network:
+        - ["private_network", {ip: 192.168.10.82}]
 
 suites:
   - name: dev
